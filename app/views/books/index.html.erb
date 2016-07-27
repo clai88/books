@@ -2,16 +2,17 @@
 
 <% @books.each do |i| %>
 <h3>
-
   <a href="/books/<%= i.id %>"><%= i.title %></a>
 </h3>
 <% end %>
 
-<%= form_tag("/books", class: "") do  %>
-    <%= text_field_tag "book[title]" %>
-    <%= submit_tag %>
+<%= form_for @book, url: books_path do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.submit %>
 <% end %>
 
 <marquee>
-<img src="http://www.hokiesports.com/track/players/images/dally_martin.png" alt="" />
+  <img src="http://www.hokiesports.com/track/players/images/dally_martin.png" alt="" />
 </marquee>

@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   def index
     @books = Book.all
+    @book = Book.new
   end
 
   def add
@@ -22,7 +23,7 @@ class BooksController < ApplicationController
 
   def delete
     @book = Book.find(params["id"]).destroy
-    
+
     redirect_to "/books"
   end
 

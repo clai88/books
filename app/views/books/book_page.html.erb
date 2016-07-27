@@ -3,20 +3,21 @@
 <b>description:</b> <%= @book.description %><br>
 <b>ISBN:</b> <%= @book.ISBN %>
 
-<%= form_tag("/books/#{@book.id}", method: "patch", class: "") do  %>
-    <%= label_tag 'Edit Description' %>
-    <%= text_field_tag "book[description]","#{@book.description}" %>
-    <%= submit_tag %>
+
+
+<%= form_for @book, url: book_path(book_id: @book.id) do |f| %>
+
+<%= f.label :edit_description %>
+<%= f.text_field :description %>
+
+<%= f.label :edit_isbn_number %>
+<%= f.text_field :ISBN %>
+
+<%= f.submit %>
 <% end %>
 
-<%= form_tag("/books/#{@book.id}", method: "patch", class: "") do  %>
-    <%= label_tag 'Edit ISBN number' %>
-    <%= text_field_tag "book[ISBN]","#{@book.ISBN}" %>
-    <%= submit_tag %>
-<% end %>
-
-<%= form_tag("/books/#{@book.id}", method: "delete", class: "") do  %>
-  <%=  button_to(name = "delete") %>
+<%= form_for @book, url: delete_book_path(book_id: @book.id) do |f| %>
+<%= f.submit "delete" %>
 <% end %>
 
 <a href="/books"><img src="http://pngimg.com/upload/book_PNG2113.png" alt="stack o books" style="width:144;height:144px;" /></a>
