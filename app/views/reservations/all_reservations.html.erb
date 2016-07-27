@@ -1,9 +1,4 @@
-<h1><%= @book.title %></h1>
-
-<b>description:</b> <%= @book.description %><br>
-<b>ISBN:</b> <%= @book.ISBN %>
-
-
+<h1>all reservations</h1>
 
 <%= form_for @book, url: book_path(book_id: @book.id) do |f| %>
 
@@ -17,7 +12,3 @@
 
 <%= f.submit %>
 <% end %>
-
-
-
-<a href="/books"><img src="http://pngimg.com/upload/book_PNG2113.png" alt="stack o books" style="width:144;height:144px;" /></a>

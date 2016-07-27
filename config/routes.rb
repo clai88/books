@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   get '/books/:id/reservations' => "reservations#book", as: :book_reservation
   get '/reservations' => "reservations#all", as: :all_reservations
+  post '/reservations' => "reservations#add"
+  get '/reservations/:id' => "reservations#details"
+  patch '/reservations/:id/return' => "reservations#return"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
