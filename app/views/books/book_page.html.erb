@@ -5,13 +5,13 @@
 
 <%= form_tag("/books/#{@book.id}", method: "patch", class: "") do  %>
     <%= label_tag 'Edit Description' %>
-    <%= text_field_tag "book[description]" %>
+    <%= text_field_tag "book[description]","#{@book.description}" %>
     <%= submit_tag %>
 <% end %>
 
 <%= form_tag("/books/#{@book.id}", method: "patch", class: "") do  %>
     <%= label_tag 'Edit ISBN number' %>
-    <%= text_field_tag "book[ISBN]" %>
+    <%= text_field_tag "book[ISBN]","#{@book.ISBN}" %>
     <%= submit_tag %>
 <% end %>
 

@@ -21,9 +21,8 @@ class BooksController < ApplicationController
   end
 
   def delete
-    @book = Book.find(params["id"])
-    @book.destroy
-
+    @book = Book.find(params["id"]).destroy
+    
     redirect_to "/books"
   end
 
