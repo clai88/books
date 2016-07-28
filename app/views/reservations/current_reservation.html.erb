@@ -1,8 +1,11 @@
+<% if @book == nil  %>
+<%= @reservation.name %> is not currently renting a valid book <br>
+
+<% else %>
 <h1>You are currently looking at the reservation for <%= @book.title %></h1>
 
-
 It is currently being rented by <%= @reservation.name %><br>
-It will be due on <%= @reservation.due_on %>
+It will be due on <%= @reservation.due_on %> <br>
 
 
 <% if @reservation.due_on == Time.now %>
@@ -10,3 +13,6 @@ It will be due on <%= @reservation.due_on %>
 <% elsif @reservation.due_on < Time.now %>
 <h1>You are in big trouble.  Your book is overdue!</h1>
 <% end %>
+<% end %>
+
+<a href="/reservations"><img src="http://media.mlive.com/grpress/entertainment_impact/photo/classic-burritopng-10effd1466b766cd.png" style="width: 100px; height: 100px" alt="" /></a>
