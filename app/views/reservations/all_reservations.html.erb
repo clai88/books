@@ -18,7 +18,7 @@
     <% @reservations.each do |reservation| %>
     <tr>
       <td>
-        <%= reservation.name %>
+        <a href="/reservations/<%= reservation.id %>"><%= reservation.name %></a>
       </td>
       <td>
         <% book = Book.all.find_by(id: reservation.book_id) %>
@@ -27,6 +27,9 @@
         <% else %>
         <%= "book not found" %>
         <% end %>
+      </td>
+      <td>
+        <%= reservation.due_on %>
       </td>
     </tr>
     <% end %>
@@ -44,3 +47,7 @@
 
 <%= f.submit "place reservation" %>
 <% end %>
+
+<marquee>
+<a href="/books"><img src="http://images.clipartpanda.com/moose-clip-art-ryanlerch_warning_moose_roadsign_2-1331px.png" height="144px" width="144px" alt="" /></a>
+</marquee>

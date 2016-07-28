@@ -1,0 +1,12 @@
+<h1>You are currently looking at the reservation for <%= @book.title %></h1>
+
+
+It is currently being rented by <%= @reservation.name %><br>
+It will be due on <%= @reservation.due_on %>
+
+
+<% if @reservation.due_on == Time.now %>
+<h1>Your book is due today</h1>
+<% elsif @reservation.due_on < Time.now %>
+<h1>You are in big trouble.  Your book is overdue!</h1>
+<% end %>

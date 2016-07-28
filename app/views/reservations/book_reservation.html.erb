@@ -1,1 +1,12 @@
 <h1>book reservation</h1>
+
+
+<h3>You are now looking at reservations for: <%= @book.title %></h3>
+
+
+<% @reservations.each do |i| %>
+  <p>
+    <%= i.name %>
+  </p>
+
+<% end %>
