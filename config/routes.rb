@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   post '/books' => "books#add"
   get '/books/:id' => "books#current", as: :book
   patch '/books/:id' => "books#edit"
-  delete '/books/:id' => "books#delete", as: :delete_book
+  delete '/books/:id' => "books#delete"
 
   get '/books/:id/reservations' => "reservations#book", as: :book_reservation
   get '/reservations' => "reservations#all", as: :all_reservations

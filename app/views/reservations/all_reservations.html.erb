@@ -1,14 +1,46 @@
 <h1>all reservations</h1>
 
-<%= form_for @book, url: book_path(book_id: @book.id) do |f| %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>
+        Reservation person
+      </th>
+      <th>
+        Book name
+      </th>
+      <th>
+        Due date
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reservations.each do |reservation| %>
+    <tr>
+      <td>
+        <%= reservation.name %>
+      </td>
+      <td>
+        <% book = Book.all.find_by(id: reservation.book_id) %>
+        <% if book %>
+        <%= book.title %>
+        <% else %>
+        <%= "book not found" %>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<%= f.label :edit_description %>
-<%= f.text_field :description %>
 
-<%= f.label :edit_isbn_number %>
-<%= f.text_field :ISBN %>
+<%= form_for @reservation, url: all_reservations_path do |f| %>
 
-<%= link_to "DESTROY", book_path(id: @book.id), method: :delete %>
+<%= f.label :name %>
+<%= f.text_field :name %>
 
-<%= f.submit %>
+<%= f.label :book_id %>
+<%= f.number_field :book_id, min: 0 %>
+
+<%= f.submit "place reservation" %>
 <% end %>
