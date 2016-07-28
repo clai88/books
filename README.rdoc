@@ -1,28 +1,15 @@
-== README
+#Books
+##Books
+###Books
+####Books
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Welcome to TIYOL (the iron yard online library), the best library in dupont circle.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+features
+- add new books
+- update book description
+- update book ISBN
+- make reservations
+- view currently reserved books
+- receive alerts for overdue books!
