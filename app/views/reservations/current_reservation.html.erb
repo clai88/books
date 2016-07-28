@@ -2,7 +2,7 @@
 <%= @reservation.name %> is not currently renting a valid book <br>
 
 <% else %>
-<h1>You are currently looking at the reservation for <%= @book.title %></h1>
+<h1>You are currently looking at the most recent reservation for <%= @book.title %></h1>
 
 It is currently being rented by <%= @reservation.name %><br>
 It will be due on <%= @reservation.due_on %> <br>

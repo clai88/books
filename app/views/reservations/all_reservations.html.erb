@@ -23,7 +23,7 @@
       <td>
         <% book = Book.all.find_by(id: reservation.book_id) %>
         <% if book %>
-        <%= book.title %>
+        <a href="books/<%= book.id %>/reservations"><%= book.title %></a>        
         <% else %>
         <%= "book not found" %>
         <% end %>
